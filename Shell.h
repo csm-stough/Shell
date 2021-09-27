@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 /*
  * This basic shell operates on a Read/Parse/Execute loop:
@@ -24,8 +26,14 @@ void rpe_loop();
 char* rpe_read_line();
 
 /*
- * Tis function "tokenizes" the string 'line' and returns an array of these tokens
+ * This function "tokenizes" the string 'line' and returns an array of these tokens
  */
 char** rpe_split_line(char* line);
+
+/*
+ * This function uses the system call 'fork', and 'exec' to start a new process from our 
+ * given command
+ */
+int rpe_launch(char** args);
 
 #endif
