@@ -1,25 +1,4 @@
-
-/*
- * This basic shell operates on a Read/Parse/Execute loop:
- * -Read: read the command from STDIN
- * -Parse: seperates the command into a program and arguments
- * -Execute: run the command
- */
-void rpe_loop() {
-	char* line;
-	char** args;
-	int status;
-
-	do {
-		printf("> ");
-		line=rpe_read_line();
-		args=rpe_split_line(line);
-		status=rpe_execute(args);
-
-		free(line);
-		free(args);
-	} while(status);
-}
+#include "Shell.h"
 
 /*
  * The overall operation of the shell can be described in 3 main phases:
