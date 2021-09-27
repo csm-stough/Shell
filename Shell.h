@@ -6,7 +6,8 @@
 #define RPE_TOK_DELIM " \t\r\n\a"
 
 #include <stdio.h>
-#include <String.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*
  * This basic shell operates on a Read/Parse/Execute loop:
